@@ -5,18 +5,17 @@ using UnityEngine;
 
 public class S_TextManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI jumpCount;
     [SerializeField] private TextMeshProUGUI resurrectCount;
+    private int TextResurrect = 0;
     // Start is called before the first frame update
     void Start()
     {
-        jumpCount.text = "Jump";
-        resurrectCount.text = "Resurrect";
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        TextResurrect = S_PlayerScript.instance.ResurrectCount;
+        resurrectCount.text = "Resurrect" + TextResurrect;
     }
 }

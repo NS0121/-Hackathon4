@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class S_PlayerScript : MonoBehaviour
 {
-    [SerializeField] private int jumpCount = 0;
-    [SerializeField] private int ResurrectCount = 0;
+    public int ResurrectCount = 0;
     [SerializeField] private float jumpPower = 0f;
     [SerializeField] private float moveSpeed = 0f;
     private bool IsJump = false;
@@ -36,9 +35,8 @@ public class S_PlayerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCount > 0 && IsJump)
+            if ( IsJump)
             {
-                jumpCount--;
                 Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbody‚ðŽæ“¾
                 Vector3 force = new Vector3(0.0f, jumpPower, 0.0f);
                 rb.AddForce(force);  // —Í‚ð‰Á‚¦‚é
