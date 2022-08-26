@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Users/Main/game0.unity
     guid: 08890e2a60383c34e9ed8e3974b7cdbd
   - enabled: 1
-    path: Assets/Users/Main/game1.unity
-    guid: af62ece4deb9c9348a927dc34bdd4c09
+    path: Assets/Users/YokoyamaYuta/Scenes/game1.unity
+    guid: 02902b75f23a2474cad48051188e54c3
+  - enabled: 1
+    path: Assets/Users/YokoyamaYuta/Scenes/game2.unity
+    guid: 5ac3ab1a31b9a194bb1800e1ebf1f5f0
   m_configObjects: {}

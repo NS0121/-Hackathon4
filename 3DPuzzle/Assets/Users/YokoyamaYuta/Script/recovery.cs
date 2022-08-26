@@ -6,7 +6,7 @@ public class recovery : MonoBehaviour
 {
     void OnTriggerEnter(Collider other) //’Ç‰Á
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Metoki")
         {
             Destroy(gameObject);
         }
