@@ -7,11 +7,14 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField]
     private GameObject _startPoint = null;
 
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField]
+    private GameObject _checkPoiint = null;
+
+    private void OnCollisionEnter(Collision other)
     {
-        if(collision.gameObject.CompareTag("Player") == true)
+        if(other.gameObject.CompareTag("Player") == true)
         {
-            StartCoroutine(ReburnPlayer(collision.gameObject));
+            StartCoroutine(ReburnPlayer(other.gameObject));
         }
     }
 
@@ -20,6 +23,14 @@ public class PlayerDeath : MonoBehaviour
         obj.SetActive(false);
         yield return new WaitForSeconds(1.0f);
         obj.SetActive(true);
-        obj.gameObject.transform.position = _startPoint.transform.position;
+
+        if(CheckPoint.instance.CheckPointFlag == false)
+        {
+            obj.gameObject.transform.position = _startPoint.transform.position;
+        }
+        else if(CheckPoint.instance.CheckPointFlag == true)
+        {
+            obj.gameObject.transform.position = _checkPoiint.transform.position;
+        }
     }
 }

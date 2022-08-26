@@ -17,18 +17,18 @@ public class MoveCamera : MonoBehaviour
     private void Start()
     {
         zAdjust = -10.0f;
+
+        _mainCamera.transform.position 
+            = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + zAdjust);
     }
 
     private void Update()
     {
-        _thisObjPosition = this.transform.position;
-
-        Debug.Log("í Ç¡ÇΩÇÊ");
         PlayerStatus.instance.Move();
 
         //PlayerÇÃx,yç¿ïWÇ…í≤êÆ
         _mainCamera.transform.position =
-            new Vector3(_thisObjPosition.x, _thisObjPosition.y, _thisObjPosition.z + zAdjust);            
+            new Vector3(_thisObjPosition.x, _thisObjPosition.y, _thisObjPosition.z + zAdjust);
 
     }
 }

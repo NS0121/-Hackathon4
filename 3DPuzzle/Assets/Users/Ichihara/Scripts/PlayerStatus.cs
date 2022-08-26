@@ -18,7 +18,6 @@ public class PlayerStatus : MonoBehaviour
     private bool IsJump = false;
     public bool IsSpawn = false;
 
-
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();  // rigidbody‚ðŽæ“¾
